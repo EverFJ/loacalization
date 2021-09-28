@@ -6,16 +6,19 @@ const translations = require("./translations.json");
 
 app.engine("handlebars", exphbs());
 app.set("view engine", "handlebars");
+app.use(express.static("public"))
+
 app.get("/:lang?", (req, res) => {
-    const lang = req.params.lang ? req.params.lang : "fr";
+    const lang = req.params.lang || "fr";
     res.render("home", {
-        greeting: translations[lang] ? translations[lang] : translations.fr,
+        greeting: translations[lang] || translations.fr,
         pageTitle: "Localization",
         title: "Home",
-        // lang: lang,
-        fr: lang == "fr",
-        es: lang == "es",
-        en: lang == "en"
+        lang: lang,
+        fr: lang === "fr",
+        es: lang === "es",
+        en: lang === "en",
+        imgPath: `/img/${lang}.png`
     })
 })
 
