@@ -9,7 +9,13 @@ app.set("view engine", "handlebars");
 app.get("/:lang?", (req, res) => {
     const lang = req.params.lang ? req.params.lang : "fr";
     res.render("home", {
-        greeting: translations[lang]
+        greeting: translations[lang] ? translations[lang] : translations.fr,
+        pageTitle: "Localization",
+        title: "Home",
+        // lang: lang,
+        fr: lang == "fr",
+        es: lang == "es",
+        en: lang == "en"
     })
 })
 
