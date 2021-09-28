@@ -11,13 +11,9 @@ app.use(express.static("public"))
 app.get("/:lang?", (req, res) => {
     const lang = req.params.lang || "fr";
     res.render("home", {
-        greeting: translations[lang] || translations.fr,
-        pageTitle: "Localization",
-        title: "Home",
-        lang: lang,
-        fr: lang === "fr",
-        es: lang === "es",
-        en: lang === "en",
+        greeting: translations[lang].greeting,
+        pageTitle: translations[lang].pageTitle,
+        title: translations[lang].title,
         imgPath: `/img/${lang}.png`
     })
 })

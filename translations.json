@@ -1,5 +1,19 @@
 {
-    "fr": "Bonjour, ça va ?",
-    "en": "Hello, how are you ?",
-    "es": "Hola, com està ?"
+    "fr": {
+        "greeting": "Bonjour, ça va ?",
+        "title": "Localisation",
+        "pageTitle": "Accueil"
+    },
+
+    "en": {
+        "greeting": "Hello, how are you ?",
+        "title": "location",
+        "pageTitle": "Home"
+    },
+
+    "es": {
+        "greeting": "Hola, com està ?",
+        "title": "localización",
+        "pageTitle": "Bienvenida"
+    }
 }
